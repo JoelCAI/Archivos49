@@ -39,5 +39,19 @@ namespace Archivos49
 
             return opcion;
         }
+
+        public static void Bienvenida()
+        {
+            Console.WriteLine("\n Bienvenido al Programa");
+            Console.WriteLine("\n Usted podrá crear un Archivo y verlo en Pantalla. Presione cualquier tecla para continuar.");
+            Console.ReadKey();
+        }
+
+        public static void Despedida()
+        {
+
+            Console.WriteLine("\n Gracias por usar nuestro Sistema presione cualquier teclar para finalizar");
+            Console.ReadKey();
+        }
     }
 }

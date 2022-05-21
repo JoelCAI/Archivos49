@@ -11,19 +11,31 @@ namespace Archivos49
     {
         public void MenuPrincipal()
         {
+            Validador.Bienvenida();
+
+            Console.Clear();
             /* Creo variable de tipo Archivo */
             TextWriter archivo;
 
             /* La inicializo y la instancio. Digo que se va a llamar en la pc un archivo con este nombre "HolaMundo.txt" */
             archivo = new StreamWriter("HolaMundo.txt");
 
-            string mensaje = Validador.ValidarStringNoVacio("Ingrese el texto que será guardado");
+            string mensaje = Validador.ValidarStringNoVacio("\n Ingrese el texto que será guardado");
 
             archivo.WriteLine(mensaje);
 
             archivo.Close();
 
-            Console.WriteLine("Se guardado el archivo " + "*" + mensaje + "*");
+            TextReader leerArchivo;
+            leerArchivo = new StreamReader("HolaMundo.txt");
+
+            Console.WriteLine("\n Usted guardo el archivo " + "\n *" + leerArchivo.ReadToEnd() + "*");
+
+            leerArchivo.Close();
+
+            Validador.Despedida();
+
+            
             
         }
 
